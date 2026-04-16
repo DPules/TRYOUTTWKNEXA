@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRYOUT TWK Paskibraka</title>
+    <title>NEXA TRYOUT TWK Paskibraka 2026</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap"
@@ -11,74 +11,87 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="container">
-      <img
-        src="img/Paskibra Logo - Logo Vector Online 2019.jfif"
-        class="header"
-      />
+      <!-- LOGO -->
+      <img src="img/Logo-1.png" class="header" />
 
+      <!-- HEADER TITLE -->
+      <h2>NEXA TRYOUT TWK</h2>
+      <p style="text-align: center; margin-top: -10px; color: #666">
+        Persiapan Seleksi Paskibraka 2026
+      </p>
+
+      <!-- DATA PESERTA -->
       <div class="info">
         <h2>Data Peserta</h2>
+
         <input id="nama" placeholder="Nama Lengkap" />
         <input id="sekolah" placeholder="Asal Sekolah" />
+
         <select id="gender">
           <option value="">-- Pilih Jenis Kelamin --</option>
-          <option value="Laki-Laki"> Laki-Laki</option>
-          <option value="Perempuan"> Perempuan</option>
-          
+          <option value="Laki-Laki">Laki-Laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+
         <input id="tinggibadan" placeholder="Tinggi Badan (CM)" />
         <input id="beratbadan" placeholder="Berat Badan (KG)" />
-        
+
         <select id="daerah">
           <option value="">-- Pilih Kabupaten / Kota --</option>
 
           <!-- KOTA -->
-          <option value="Kota Bandung">Kota Bandung</option>
-          <option value="Kota Bekasi">Kota Bekasi</option>
-          <option value="Kota Bogor">Kota Bogor</option>
-          <option value="Kota Cimahi">Kota Cimahi</option>
-          <option value="Kota Cirebon">Kota Cirebon</option>
-          <option value="Kota Depok">Kota Depok</option>
-          <option value="Kota Sukabumi">Kota Sukabumi</option>
-          <option value="Kota Tasikmalaya">Kota Tasikmalaya</option>
-          <option value="Kota Banjar">Kota Banjar</option>
+          <option>Kota Bandung</option>
+          <option>Kota Bekasi</option>
+          <option>Kota Bogor</option>
+          <option>Kota Cimahi</option>
+          <option>Kota Cirebon</option>
+          <option>Kota Depok</option>
+          <option>Kota Sukabumi</option>
+          <option>Kota Tasikmalaya</option>
+          <option>Kota Banjar</option>
 
           <!-- KABUPATEN -->
-          <option value="Kabupaten Bandung">Kabupaten Bandung</option>
-          <option value="Kabupaten Bandung Barat">
-            Kabupaten Bandung Barat
-          </option>
-          <option value="Kabupaten Bekasi">Kabupaten Bekasi</option>
-          <option value="Kabupaten Bogor">Kabupaten Bogor</option>
-          <option value="Kabupaten Ciamis">Kabupaten Ciamis</option>
-          <option value="Kabupaten Cianjur">Kabupaten Cianjur</option>
-          <option value="Kabupaten Cirebon">Kabupaten Cirebon</option>
-          <option value="Kabupaten Garut">Kabupaten Garut</option>
-          <option value="Kabupaten Indramayu">Kabupaten Indramayu</option>
-          <option value="Kabupaten Karawang">Kabupaten Karawang</option>
-          <option value="Kabupaten Kuningan">Kabupaten Kuningan</option>
-          <option value="Kabupaten Majalengka">Kabupaten Majalengka</option>
-          <option value="Kabupaten Pangandaran">Kabupaten Pangandaran</option>
-          <option value="Kabupaten Purwakarta">Kabupaten Purwakarta</option>
-          <option value="Kabupaten Subang">Kabupaten Subang</option>
-          <option value="Kabupaten Sukabumi">Kabupaten Sukabumi</option>
-          <option value="Kabupaten Sumedang">Kabupaten Sumedang</option>
-          <option value="Kabupaten Tasikmalaya">Kabupaten Tasikmalaya</option>
+          <option>Kabupaten Bandung</option>
+          <option>Kabupaten Bandung Barat</option>
+          <option>Kabupaten Bekasi</option>
+          <option>Kabupaten Bogor</option>
+          <option>Kabupaten Ciamis</option>
+          <option>Kabupaten Cianjur</option>
+          <option>Kabupaten Cirebon</option>
+          <option>Kabupaten Garut</option>
+          <option>Kabupaten Indramayu</option>
+          <option>Kabupaten Karawang</option>
+          <option>Kabupaten Kuningan</option>
+          <option>Kabupaten Majalengka</option>
+          <option>Kabupaten Pangandaran</option>
+          <option>Kabupaten Purwakarta</option>
+          <option>Kabupaten Subang</option>
+          <option>Kabupaten Sukabumi</option>
+          <option>Kabupaten Sumedang</option>
+          <option>Kabupaten Tasikmalaya</option>
         </select>
 
         <button onclick="mulaiUjian()">Mulai Ujian</button>
       </div>
 
-      <div class="timer hidden"><span id="time">10:00</span></div>
+      <!-- TIMER -->
+      <div class="timer hidden">⏱ Sisa Waktu: <span id="time">10:00</span></div>
 
+      <!-- PROGRESS -->
       <div class="progress-box hidden">
-        <div class="progress"><div id="progressBar"></div></div>
+        <div class="progress">
+          <div id="progressBar"></div>
+        </div>
         <small id="progressText">0 / 20</small>
       </div>
 
+      <!-- NAVIGASI SOAL -->
       <div id="navSoal" class="nav-soal hidden"></div>
 
+      <!-- FORM SOAL -->
       <form id="quizForm" class="hidden">
         <div id="soalContainer"></div>
 

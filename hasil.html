@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hasil Ujian</title>
+    <title>NEXA - Hasil Tryout TWK</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap"
@@ -19,10 +19,7 @@
       body {
         margin: 0;
         min-height: 100vh;
-        background:
-          linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)),
-          url("img/logo-dppi_20251220_232237_0000.png");
-        background-size: cover;
+        background: linear-gradient(180deg, #ffffff, #f5e9e9);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -33,8 +30,8 @@
         width: 100%;
         max-width: 420px;
         padding: 30px 25px;
-        border-radius: 18px;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
         text-align: center;
         animation: fadeIn 0.6s ease;
       }
@@ -51,30 +48,30 @@
       }
 
       .logo {
-        width: 90px;
+        width: 80px;
         margin-bottom: 10px;
       }
 
       h2 {
         font-family: "Poppins", sans-serif;
-        color: #b00000;
+        color: #800000;
         margin-bottom: 5px;
       }
 
       .sub {
         font-size: 14px;
         color: #777;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
       }
 
       .data {
         text-align: left;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
       }
 
       .data div {
-        margin-bottom: 8px;
-        font-size: 15px;
+        margin-bottom: 6px;
+        font-size: 14px;
       }
 
       .data span {
@@ -82,43 +79,37 @@
         color: #333;
       }
 
+      /* SCORE */
       .score-box {
-        background: linear-gradient(135deg, #c00000, #ff3b3b);
+        background: linear-gradient(135deg, #800000, #b00000);
         color: white;
         border-radius: 16px;
         padding: 20px 10px;
         margin: 20px 0;
       }
 
-      .score-box small {
-        font-size: 14px;
-        opacity: 0.9;
-      }
-
       .score {
         font-family: "Poppins", sans-serif;
         font-size: 48px;
         font-weight: 700;
+      }
+
+      .grade {
+        font-size: 18px;
         margin-top: 5px;
+        font-weight: 600;
       }
 
-      .note {
+      /* FEEDBACK */
+      .feedback {
         font-size: 14px;
-        color: #555;
-        margin-top: 15px;
+        margin-top: 10px;
+        color: #444;
       }
 
-      .footer {
-        margin-top: 25px;
-        font-size: 13px;
-        color: #888;
-      }
-      .btn-link {
-        text-decoration: none;
-      }
-
-      .btn-pembahasan {
-        background: linear-gradient(135deg, #ff3b3b, #b00000);
+      /* BUTTON */
+      .btn {
+        background: linear-gradient(135deg, #800000, #5a0000);
         color: white;
         border: none;
         padding: 12px 20px;
@@ -127,72 +118,88 @@
         border-radius: 12px;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 6px 15px rgba(192, 0, 0, 0.3);
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
+        margin-top: 10px;
       }
 
-      .btn-pembahasan:hover {
-        transform: translateY(-2px) scale(1.03);
-        box-shadow: 0 10px 20px rgba(192, 0, 0, 0.4);
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(128, 0, 0, 0.4);
       }
 
-      .btn-pembahasan:active {
-        transform: scale(0.97);
+      .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #888;
       }
     </style>
   </head>
 
   <body>
     <div class="result-card">
-      <!-- LOGO / ICON -->
-      <img
-        src="img/Paskibra Logo - Logo Vector Online 2019.jfif"
-        class="logo"
-        alt="Garuda"
-      />
+      <img src="img/Logo-1.png" class="logo" />
 
-      <h2>Hasil Ujian TWK</h2>
-      <div class="sub">Simulasi Seleksi Paskibraka</div>
+      <h2>NEXA TRYOUT RESULT</h2>
+      <div class="sub">Simulasi Seleksi Paskibraka 2026</div>
 
-      <!-- DATA PESERTA -->
+      <!-- DATA -->
       <div class="data">
         <div>Nama: <span id="n"></span></div>
         <div>Sekolah: <span id="s"></span></div>
         <div>Kab/Kota: <span id="d"></span></div>
       </div>
 
-      <!-- NILAI -->
+      <!-- SCORE -->
       <div class="score-box">
-        <small>Nilai Akhir</small>
         <div class="score" id="v">0</div>
-      </div>
-      <br />
-
-      <a target="_blank" href="pembahasan.html" class="btn-link">
-        <button class="btn-pembahasan">Lihat Pembahasan</button>
-      </a>
-      <div class="note">
-        Terima kasih telah mengikuti ujian.<br />
-        Tetap junjung tinggi nilai Pancasila dan nasionalisme
+        <div class="grade" id="g">-</div>
       </div>
 
-      <div class="footer">TRYOUT TWK Paskibraka</div>
+      <div class="feedback" id="f"></div>
+
+      <!-- BUTTON -->
+      <button class="btn" onclick="lihatPembahasan()">Lihat Pembahasan</button>
+
+      <div class="footer">NEXA • Paskibraka Training Platform</div>
     </div>
 
     <script>
-      document.getElementById("n").textContent =
-        localStorage.getItem("nama") || "-";
+      const nama = localStorage.getItem("nama") || "-";
+      const sekolah = localStorage.getItem("sekolah") || "-";
+      const daerah = localStorage.getItem("daerah") || "-";
+      const nilai = parseInt(localStorage.getItem("nilai") || "0");
 
-      document.getElementById("s").textContent =
-        localStorage.getItem("sekolah") || "-";
+      document.getElementById("n").textContent = nama;
+      document.getElementById("s").textContent = sekolah;
+      document.getElementById("d").textContent = daerah;
+      document.getElementById("v").textContent = nilai;
 
-      document.getElementById("d").textContent =
-        localStorage.getItem("daerah") || "-";
+      // 🎯 GRADE SYSTEM
+      let grade = "";
+      let feedback = "";
 
-      document.getElementById("v").textContent =
-        localStorage.getItem("nilai") || "0";
+      if (nilai >= 85) {
+        grade = "A (Sangat Siap!)";
+        feedback =
+          "Level kamu sudah sangat siap. Tinggal konsistensi dan jaga mental!";
+      } else if (nilai >= 70) {
+        grade = "B (Siap)";
+        feedback =
+          "Sudah bagus, tapi masih ada beberapa materi yang perlu diperkuat.";
+      } else if (nilai >= 50) {
+        grade = "C (Perlu Latihan)";
+        feedback =
+          "Kamu perlu latihan lebih intens, terutama pemahaman konsep TWK.";
+      } else {
+        grade = "D (Perlu Pembinaan)";
+        feedback = "Mulai dari dasar lagi, fokus ke Pancasila & sejarah.";
+      }
+
+      document.getElementById("g").textContent = grade;
+      document.getElementById("f").textContent = feedback;
+
+      function lihatPembahasan() {
+        window.open("pembahasan.html", "_blank");
+      }
     </script>
   </body>
 </html>
